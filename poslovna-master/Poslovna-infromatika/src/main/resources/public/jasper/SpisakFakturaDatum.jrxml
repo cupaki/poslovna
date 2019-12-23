@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SpisakFakturaDatum" pageWidth="1400" pageHeight="595" orientation="Landscape" columnWidth="1360" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c36999cd-5ce4-479d-a434-0a20b6bf2895">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="datumFromParam" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="datumUntilParam" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT ID_FAKTURE, FAKTURA.ID_PARTNERA, NAZIV_PARTNERA, FAKTURA.ID_PREDUZECA, NAZIV_PREDUZECA, FAKTURA.ID_GODINE, GODINA, VRSTA_FAKTURE, BROJ_FAKTURE, DATUM_FAKTURE, DATUM_VALUTE, UKUPAN_RABAT, UKUPAN_IZNOS_BEZ_PDV_A, UKUPAN_PDV, UKUPNO_ZA_PLACANJE FROM FAKTURA JOIN POSLOVNA_GODINA ON FAKTURA.ID_GODINE = POSLOVNA_GODINA.ID_GODINE JOIN POSLOVNI_PARTNER ON FAKTURA.ID_PARTNERA = POSLOVNI_PARTNER.ID_PARTNERA JOIN PREDUZECE ON FAKTURA.ID_PREDUZECA = PREDUZECE.ID_PREDUZECA
+WHERE DATUM_FAKTURE >= $P{datumFromParam} AND DATUM_FAKTURE <= $P{datumUntilParam}]]>
+	</queryString>
+	<field name="ID_FAKTURE" class="java.lang.Integer"/>
+	<field name="ID_PARTNERA" class="java.lang.Integer"/>
+	<field name="NAZIV_PARTNERA" class="java.lang.String"/>
+	<field name="ID_PREDUZECA" class="java.math.BigDecimal"/>
+	<field name="NAZIV_PREDUZECA" class="java.lang.String"/>
+	<field name="ID_GODINE" class="java.lang.Integer"/>
+	<field name="GODINA" class="java.math.BigDecimal"/>
+	<field name="VRSTA_FAKTURE" class="java.lang.String"/>
+	<field name="BROJ_FAKTURE" class="java.lang.Integer"/>
+	<field name="DATUM_FAKTURE" class="java.sql.Timestamp"/>
+	<field name="DATUM_VALUTE" class="java.sql.Timestamp"/>
+	<field name="UKUPAN_RABAT" class="java.lang.Double"/>
+	<field name="UKUPAN_IZNOS_BEZ_PDV_A" class="java.lang.Double"/>
+	<field name="UKUPAN_PDV" class="java.lang.Double"/>
+	<field name="UKUPNO_ZA_PLACANJE" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="65" splitType="Stretch">
+			<staticText>
+				<reportElement x="631" y="10" width="100" height="35" uuid="b994e462-90bb-42d9-b0f3-cfb97490d6d3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fakture]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1120" y="30" width="100" height="20" uuid="b0a7fbb0-44ef-4aed-a112-5b318570acf6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{datumFromParam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1231" y="30" width="100" height="20" uuid="1ecbf422-37e4-4955-9234-d87be7664add"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{datumUntilParam}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1120" y="10" width="100" height="20" uuid="7337a944-5158-49ff-9414-bc2ef39293e5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Od:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1231" y="10" width="100" height="20" uuid="dcdb4d19-2214-45ef-a217-4a27eece758e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Do: ]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="32" y="10" width="100" height="20" uuid="8d48d8a5-bee4-4192-984d-d00ef39f1367"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="34">
+			<staticText>
+				<reportElement x="31" y="0" width="100" height="20" uuid="b6496fcc-036a-4314-a21b-73ab26bdcf32"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Id fakture]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="0" width="100" height="20" uuid="315cceee-de82-4aa3-82fe-44229194abab"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Naziv partnera]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="231" y="0" width="100" height="20" uuid="653280ed-7a16-4362-872e-b56aca35c45c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Id preduzeca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="431" y="0" width="100" height="20" uuid="1ef241b0-7dc5-44d2-94a2-53a4d4438842"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Godina]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="531" y="0" width="100" height="20" uuid="ef85a81a-2a1d-4b2d-bcd5-9d576ed9ce7e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vrsta fakture]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="831" y="0" width="100" height="20" uuid="b7705021-8de3-460a-9b03-e52678cec951"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Datum valute]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="931" y="0" width="100" height="20" uuid="ace86d32-6531-4a91-b4bc-31e45dde51bf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ukupan rabat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="331" y="0" width="100" height="20" uuid="028e7ca6-a14f-47f2-8a95-19fda69f240c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Naziv preduzeca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="631" y="0" width="100" height="20" uuid="ee855db4-0642-4778-8674-a0df87146401"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Broj fakture]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1031" y="0" width="100" height="20" uuid="77a36b1c-cd7c-4193-8eaf-cbdc4412b112"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ukupan iznos bez pdv-a]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1131" y="0" width="100" height="20" uuid="445fdeee-4607-4b2a-811c-a46274c6ff34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ukupan pdv]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1231" y="0" width="100" height="20" uuid="c42e35bd-1a50-4eed-8999-f646e49909ab"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ukupno za placanje sa pdv-om]]></text>
+			</staticText>
+			<line>
+				<reportElement x="32" y="25" width="1299" height="1" uuid="92b7aca2-93dd-445b-9ec1-b4de7f6747d4"/>
+			</line>
+			<staticText>
+				<reportElement x="731" y="0" width="100" height="20" uuid="5f753800-d8fd-4759-977b-4000f30b22b2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Datum fakture]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="31" y="0" width="100" height="20" uuid="5a6a8a1f-81fd-405f-a402-d4da1e217556"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ID_FAKTURE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="0" width="100" height="20" uuid="313ace04-b836-438f-b38f-07faf6a429b8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NAZIV_PARTNERA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="231" y="0" width="100" height="20" uuid="c325e414-5c28-483e-8700-716fcefce6fd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ID_PREDUZECA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="331" y="0" width="100" height="20" uuid="acb3254d-bc50-4a7a-ab90-01e4b280a1f9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NAZIV_PREDUZECA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="431" y="0" width="100" height="20" uuid="a27f2e1c-2e7a-4868-908c-3461ff769f51"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{GODINA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="531" y="0" width="100" height="20" uuid="ca729006-8948-47f5-b7b6-ae2ec6673319"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{VRSTA_FAKTURE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="831" y="0" width="100" height="20" uuid="ee664cd1-3aaa-4ab0-8454-3de747b6072c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{DATUM_VALUTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="931" y="0" width="100" height="20" uuid="2a2cd2ea-2a27-4dc8-8868-47ebc828c48b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{UKUPAN_RABAT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="631" y="0" width="100" height="20" uuid="4739d0ca-e1f4-4af8-a039-31d56ee89301"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{BROJ_FAKTURE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1031" y="0" width="100" height="20" uuid="56fc8912-74de-4e17-ab7c-0c3ebbef7661"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{UKUPAN_IZNOS_BEZ_PDV_A}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1131" y="0" width="100" height="20" uuid="27af0363-152f-4324-8823-380c68f26fc5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{UKUPAN_PDV}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1231" y="0" width="100" height="20" uuid="a6f459eb-e80a-43b7-a315-bcffcd1a345b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{UKUPNO_ZA_PLACANJE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="731" y="0" width="100" height="20" uuid="0d8344c4-6e6b-421d-8da9-26a294bbda67"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{DATUM_FAKTURE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="55" splitType="Stretch">
+			<textField>
+				<reportElement x="1231" y="35" width="100" height="20" uuid="71e0109b-c0b8-498a-88b0-260ac2c6e3ab"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="Faktura">
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded" minOccurs="0">
+                <xs:element name="stavka">
+                    <xs:complexType>
+                        <xs:attribute name="id_proizvoda" type="xs:int"/>
+                        <xs:attribute name="jedinica_mere" type="xs:int"/>
+                        <xs:attribute name="naziv_proizvoda" type="xs:string"/> 
+                        <xs:attribute name="id_stavke_fakture" type="xs:int"/>
+                        <xs:attribute name="id_fakture" type="xs:int"/>
+                        <xs:attribute name="cena_bez_pdva" type="xs:float"/>
+                        <xs:attribute name="skracenica_jedinice_mere" type="xs:string"/>
+                        <xs:attribute name="ukupan_iznos_sa_pdvom" type="xs:float"/>
+                        <xs:attribute name="kolicina" type="xs:int"/>
+                        <xs:attribute name="rabat" type="xs:float"/>
+                        <xs:attribute name="stopa_pdva" type="xs:float"/>
+                        <xs:attribute name="osnovica" type="xs:float"/>
+                        <xs:attribute name="iznos_pdva" type="xs:float"/>
+                        <xs:attribute name="stavka_fakture" type="xs:int"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="datum" type="xs:date"/>
+            <xs:attribute name="id_fakture" type="xs:int"/>
+            <xs:attribute name="id_partnera" type="xs:int"/>
+            <xs:attribute name="naziv_partnera" type="xs:string"/>
+            <xs:attribute name="naziv_preduzeca" type="xs:string"/>
+            <xs:attribute name="id_preduzeca" type="xs:int"/>
+            <xs:attribute name="id_godine" type="xs:int"/>
+            <xs:attribute name="godina" type="xs:int"/>
+            <xs:attribute name="vrsta_fakture" type="xs:string"/>
+            <xs:attribute name="broj_fakture" type="xs:int"/>
+            <xs:attribute name="datum_valute" type="xs:date"/>
+            <xs:attribute name="ukupan_rabat" type="xs:float"/>
+            <xs:attribute name="ukupan_iznos_bez_pdv" type="xs:float"/>
+            <xs:attribute name="ukupan_pdv" type="xs:float"/>
+            <xs:attribute name="ukupno_za_placanje" type="xs:float"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

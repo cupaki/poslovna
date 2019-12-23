@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Faktura3" pageWidth="1250" pageHeight="595" orientation="Landscape" columnWidth="1210" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5bcdc75d-bc04-4ce5-8547-392379d999eb">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="390"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1" uuid="bb9b6ae0-c6d4-4520-adc5-45c06c3877fb"/>
+	<subDataset name="dataset2" uuid="3b808cc6-cade-47c5-a220-0b7bea7aa805"/>
+	<parameter name="IdStavkeParam" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[7]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT ID_STAVKE_FAKTURE, STAVKE_FAKTURE.ID_PROIZVODA, NAZIV_PROIZVODA, STAVKE_FAKTURE.ID_FAKTURE, BROJ_FAKTURE, CENA_BEZ_PDV_A, SKRACENICA_JEDINICE_MERE, UKUPAN_IZNOS_SA_PDV_OM, KOLICINA, JEDINICA_MERE, RABAT, STOPA_PDV_A, OSNOVICA, IZNOS_PDV_A, STAVKA_FAKTURE FROM STAVKE_FAKTURE JOIN FAKTURA ON STAVKE_FAKTURE.ID_FAKTURE = FAKTURA.ID_FAKTURE JOIN PROIZVOD ON STAVKE_FAKTURE.ID_PROIZVODA = PROIZVOD.ID_PROIZVODA WHERE STAVKE_FAKTURE.ID_FAKTURE = $P{IdStavkeParam}]]>
+	</queryString>
+	<field name="ID_STAVKE_FAKTURE" class="java.lang.Integer"/>
+	<field name="ID_PROIZVODA" class="java.lang.Integer"/>
+	<field name="NAZIV_PROIZVODA" class="java.lang.String"/>
+	<field name="ID_FAKTURE" class="java.lang.Integer"/>
+	<field name="BROJ_FAKTURE" class="java.lang.Integer"/>
+	<field name="CENA_BEZ_PDV_A" class="java.lang.Double"/>
+	<field name="SKRACENICA_JEDINICE_MERE" class="java.lang.String"/>
+	<field name="UKUPAN_IZNOS_SA_PDV_OM" class="java.lang.Double"/>
+	<field name="KOLICINA" class="java.math.BigDecimal"/>
+	<field name="JEDINICA_MERE" class="java.math.BigDecimal"/>
+	<field name="RABAT" class="java.lang.Double"/>
+	<field name="STOPA_PDV_A" class="java.math.BigDecimal"/>
+	<field name="OSNOVICA" class="java.lang.Double"/>
+	<field name="IZNOS_PDV_A" class="java.lang.Double"/>
+	<field name="STAVKA_FAKTURE" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="559" y="0" width="88" height="33" uuid="1b97fc58-16f8-4d1f-a635-6d57e2e53dd4"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Faktura]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1093" y="10" width="107" height="20" uuid="92a6b484-cef4-49f8-92fc-1734a899dde8"/>
+				<textFieldExpression><![CDATA[$F{ID_FAKTURE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1100" y="30" width="100" height="20" uuid="c99ff1b9-2cdb-42c5-b91e-86646c0d320c"/>
+				<textFieldExpression><![CDATA[$F{BROJ_FAKTURE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1039" y="10" width="100" height="20" uuid="ae04290e-a25d-4ef0-893a-c712b387dfdc"/>
+				<text><![CDATA[ID fakture: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1039" y="30" width="100" height="20" uuid="eccf7ee5-baa6-4c0b-a238-bb039a5cf048"/>
+				<text><![CDATA[Broj fakture: ]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="14" y="10" width="100" height="20" uuid="68dd24ab-00dc-4fc1-a6ce-9dd2c0c4adc7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="128" y="0" width="100" height="20" uuid="27453840-9e6d-4358-b909-7923772284cc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Naziv proizvoda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="244" y="0" width="100" height="20" uuid="8cb02003-f32c-40e0-aa27-6f42d0a37bdf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jed.mere]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="362" y="0" width="100" height="20" uuid="59e843f1-5d56-4cd7-a628-da921b3f9417"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kolicina]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="479" y="0" width="100" height="20" uuid="5df32413-8a8f-4fcc-b9aa-45c5195012e4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Osnovica]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="593" y="0" width="100" height="20" uuid="8ff87466-7632-4aea-8e84-cbd3369704b5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cena bez pdv-a]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="717" y="0" width="100" height="20" uuid="94d43170-5489-42e0-9d2d-5ad46688dafe"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rabat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="837" y="0" width="100" height="20" uuid="6a980675-7dfa-45ea-846f-82c72ca8c017"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Stopa pdv-a]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1075" y="0" width="125" height="20" uuid="aee928fa-b669-42b6-895c-1b15f5bf1d90"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ukupan iznos sa pdv-om]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="0" width="100" height="20" uuid="cdd6b3af-bb4d-4ea2-bdf9-ce98b989d1dd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Id stavke]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="955" y="0" width="100" height="20" uuid="d6a80f31-34de-4fae-ac7c-435a34c819c7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Iznos pdv-a]]></text>
+			</staticText>
+			<line>
+				<reportElement x="9" y="24" width="1191" height="1" uuid="4106fb78-e5dd-4bac-bd92-e6b2028e4776"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="128" y="0" width="100" height="20" uuid="2507f727-06cc-4c86-bae5-9a72eaef949e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NAZIV_PROIZVODA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="244" y="0" width="100" height="20" uuid="4af1b8a3-2204-43cf-aa48-89ce3a0a497f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{SKRACENICA_JEDINICE_MERE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="0" width="100" height="20" uuid="af66f0d8-03ba-4d16-8428-51be5be34b92"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{KOLICINA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="479" y="0" width="100" height="20" uuid="5e7c11f9-2a8c-44bb-88f2-652307997366"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{OSNOVICA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="593" y="0" width="100" height="20" uuid="d6bb2702-58c6-4669-b36b-187a29412bad"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{CENA_BEZ_PDV_A}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="717" y="0" width="100" height="20" uuid="8cb4f778-8f9b-49c0-8cb3-c2ec78e1255f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{RABAT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="837" y="0" width="100" height="20" uuid="6f15279d-f036-431e-9b98-28d6bedd5a67"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{STOPA_PDV_A}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1075" y="0" width="125" height="20" uuid="4b278725-d3ae-431b-be8b-e21de699c20a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{UKUPAN_IZNOS_SA_PDV_OM}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="14" y="1" width="100" height="20" uuid="5e23dcfe-63b2-43fb-b29f-728c82e2ca2a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ID_STAVKE_FAKTURE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="955" y="0" width="100" height="20" uuid="3468a305-ceb2-4f8b-82c1-fa617ae080e4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{IZNOS_PDV_A}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="1100" y="34" width="100" height="20" uuid="fcfbf74e-51d8-4d69-aad1-91a5a0db8d56"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

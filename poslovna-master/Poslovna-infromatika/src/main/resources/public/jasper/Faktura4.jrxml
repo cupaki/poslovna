@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Faktura4" pageWidth="1500" pageHeight="595" orientation="Landscape" columnWidth="1460" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="050cc531-35f4-4bf9-a187-3f4ca43bc273">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Preduzece" uuid="c700c75b-5043-4a2c-82b3-bfbe0039719d">
+		<parameter name="IdPreduzecaParam" class="java.lang.Integer">
+			<defaultValueExpression><![CDATA[4]]></defaultValueExpression>
+		</parameter>
+		<parameter name="svasta" class="java.lang.Integer">
+			<defaultValueExpression><![CDATA[4]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[SELECT ID_PREDUZECA, NAZIV_PREDUZECA, ADRESA_PREDUZECA, PIB_PREDUZECA, MATICNI_BROJ_PREDUZECA, TEKUCI_RACUN_PREDUZECA, BROJ_TELEFONA_PREDUZECA, EMAIL_ADRESA_PREDUZECA FROM PREDUZECE WHERE ID_PREDUZECA = $P{svasta}]]>
+		</queryString>
+		<field name="ID_PREDUZECA" class="java.math.BigDecimal"/>
+		<field name="NAZIV_PREDUZECA" class="java.lang.String"/>
+		<field name="ADRESA_PREDUZECA" class="java.lang.String"/>
+		<field name="PIB_PREDUZECA" class="java.math.BigDecimal"/>
+		<field name="MATICNI_BROJ_PREDUZECA" class="java.math.BigDecimal"/>
+		<field name="TEKUCI_RACUN_PREDUZECA" class="java.math.BigDecimal"/>
+		<field name="BROJ_TELEFONA_PREDUZECA" class="java.lang.String"/>
+		<field name="EMAIL_ADRESA_PREDUZECA" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="Partner" uuid="19eb2251-e514-49aa-83f7-8df753461a13">
+		<parameter name="IdPartnerParam" class="java.lang.Integer">
+			<defaultValueExpression><![CDATA[4]]></defaultValueExpression>
+		</parameter>
+		<parameter name="nesto" class="java.lang.Integer">
+			<defaultValueExpression><![CDATA[4]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[SELECT VRSTA_PREDUZECA, ID_PARTNERA, POSLOVNI_PARTNER.ID_PREDUZECA, NAZIV_PREDUZECA, NAZIV_PARTNERA, ADRESA_PARTNERA, PIB_PARTNERA, MATICNI_BROJ_PARTNERA, TEKUCI_RACUN_PARTNERA, BROJ_TELEFONA_PARTNERA, EMAIL_ADRESA_PARTNERA FROM POSLOVNI_PARTNER JOIN PREDUZECE ON POSLOVNI_PARTNER.ID_PREDUZECA = PREDUZECE.ID_PREDUZECA WHERE ID_PARTNERA = $P{nesto}]]>
+		</queryString>
+		<field name="VRSTA_PREDUZECA" class="java.lang.String"/>
+		<field name="ID_PARTNERA" class="java.lang.Integer"/>
+		<field name="ID_PREDUZECA" class="java.math.BigDecimal"/>
+		<field name="NAZIV_PREDUZECA" class="java.lang.String"/>
+		<field name="NAZIV_PARTNERA" class="java.lang.String"/>
+		<field name="ADRESA_PARTNERA" class="java.lang.String"/>
+		<field name="PIB_PARTNERA" class="java.math.BigDecimal"/>
+		<field name="MATICNI_BROJ_PARTNERA" class="java.math.BigDecimal"/>
+		<field name="TEKUCI_RACUN_PARTNERA" class="java.math.BigDecimal"/>
+		<field name="BROJ_TELEFONA_PARTNERA" class="java.lang.String"/>
+		<field name="EMAIL_ADRESA_PARTNERA" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="IdStavkeParam" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[7]]></defaultValueExpression>
+	</parameter>
+	<parameter name="nesto" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[4]]></defaultValueExpression>
+	</parameter>
+	<parameter name="svasta" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[4]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT ID_STAVKE_FAKTURE, STAVKE_FAKTURE.ID_PROIZVODA, NAZIV_PROIZVODA, STAVKE_FAKTURE.ID_FAKTURE, BROJ_FAKTURE, CENA_BEZ_PDV_A, SKRACENICA_JEDINICE_MERE, UKUPAN_IZNOS_SA_PDV_OM, KOLICINA, JEDINICA_MERE, RABAT, STOPA_PDV_A, OSNOVICA, IZNOS_PDV_A, STAVKA_FAKTURE FROM STAVKE_FAKTURE JOIN FAKTURA ON STAVKE_FAKTURE.ID_FAKTURE = FAKTURA.ID_FAKTURE JOIN PROIZVOD ON STAVKE_FAKTURE.ID_PROIZVODA = PROIZVOD.ID_PROIZVODA WHERE STAVKE_FAKTURE.ID_FAKTURE = $P{IdStavkeParam}]]>
+	</queryString>
+	<field name="ID_STAVKE_FAKTURE" class="java.lang.Integer"/>
+	<field name="ID_PROIZVODA" class="java.lang.Integer"/>
+	<field name="NAZIV_PROIZVODA" class="java.lang.String"/>
+	<field name="ID_FAKTURE" class="java.lang.Integer"/>
+	<field name="BROJ_FAKTURE" class="java.lang.Integer"/>
+	<field name="CENA_BEZ_PDV_A" class="java.lang.Double"/>
+	<field name="SKRACENICA_JEDINICE_MERE" class="java.lang.String"/>
+	<field name="UKUPAN_IZNOS_SA_PDV_OM" class="java.lang.Double"/>
+	<field name="KOLICINA" class="java.math.BigDecimal"/>
+	<field name="JEDINICA_MERE" class="java.math.BigDecimal"/>
+	<field name="RABAT" class="java.lang.Double"/>
+	<field name="STOPA_PDV_A" class="java.math.BigDecimal"/>
+	<field name="OSNOVICA" class="java.lang.Double"/>
+	<field name="IZNOS_PDV_A" class="java.lang.Double"/>
+	<field name="STAVKA_FAKTURE" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table 2" style="table 2" x="22" y="0" width="360" height="50" uuid="5bc7cd64-9c45-464a-843e-b7477eae3f9c"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Preduzece" uuid="1e7ea1fe-8386-4582-bc14-c63c057138e9">
+						<datasetParameter name="svasta">
+							<datasetParameterExpression><![CDATA[$P{svasta}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="3f702224-9f56-4030-862f-1b1c8f03748e">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="208ff03c-bb36-49f4-8ad3-07e237bb2e55"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Naziv]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="dd6824ea-5084-49dc-af65-371a874e662c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{NAZIV_PREDUZECA}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="82403791-8bc7-4bb9-8c58-6b72aa9c772b">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="57328465-ae3a-4d07-8b97-4d8094fb87f8"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Adresa]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="eb1ef3a4-007d-47ae-aea7-0c6531eafeb4"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{ADRESA_PREDUZECA}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="6aba8922-499d-4b8c-93b7-14e1792ba6f2">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="abb8f904-7a27-488d-861b-cbfa54befc8e"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[PIB]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="bd5af83d-9641-491b-814e-4d7d32bf86b2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{PIB_PREDUZECA}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="14350c11-e6a4-4ee3-98cf-aa3d44c398b0">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="907911c8-c30c-40f7-9eda-1e0d33a867ba"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Maticni broj]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="87fce0cf-d192-4e6b-961c-4c60a1460e47"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{MATICNI_BROJ_PREDUZECA}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="32f0ce6a-20c6-47d9-9045-503cc3da7a86">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="24b4fe46-85ce-401e-bbc5-40de6261f391"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Tekuci racun]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="be8e2d4c-202b-49f3-a43d-05cb34f82ec0"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{TEKUCI_RACUN_PREDUZECA}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="eccc55bd-1e94-435d-8c0d-09c3851a5684">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="1918da94-5981-4dd1-9da8-65835f47a61b"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Telefon]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="5a5e6cc6-d3ec-4536-841c-4d30f866dfbf"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{BROJ_TELEFONA_PREDUZECA}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="96551dda-d7f9-4323-8447-0ec7cdf7b253">
+						<jr:columnHeader style="table 2_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="322bce57-c3d9-4496-a2a1-ce60aeec6854"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Email]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="165b4e34-e087-4001-8954-3a1b662eff0e"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{EMAIL_ADRESA_PREDUZECA}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement key="table 4" style="table 4" x="800" y="0" width="360" height="50" uuid="8e825971-04e4-4e3e-ae49-612e4b6b4446"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Partner" uuid="28939c08-2765-47f6-952c-7bd3cf41a5e9">
+						<datasetParameter name="nesto">
+							<datasetParameterExpression><![CDATA[$P{nesto}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="046b2e03-3c9b-43af-878b-ed98e91e59b5">
+						<jr:columnHeader style="table 4_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="d05ae85f-827a-4da6-a6be-b1367240bd25"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Naziv partnera]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 4_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="dcbfaec4-0a44-42d6-81c6-d0973244e347"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{NAZIV_PARTNERA}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="f8daa3fb-a801-44ea-a5b8-b9548ecca8d3">
+						<jr:columnHeader style="table 4_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="265cbdae-8d44-4dfb-be39-84f8e1524c8f"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Adresa]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 4_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="b5e91859-4161-4654-9d81-4adf585afe82"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{ADRESA_PARTNERA}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="54632c52-48f1-4a2a-ab73-70e17d671aa5">
+						<jr:columnHeader style="table 4_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="0a43f7d9-dc1e-485e-82e6-2bb45bb711e0"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[PIB]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 4_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="7d921f1c-3e75-4490-8816-32c733bee076"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{PIB_PARTNERA}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="c51cff8f-ea5d-4515-8039-a48b217818ce">
+						<jr:columnHeader style="table 4_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="c93d31ba-6d98-4078-b3be-cbe4be9cbe5b"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Maticni broj]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 4_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="07d532ee-1287-42d6-aa70-4f7ea5bf710e"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{MATICNI_BROJ_PARTNERA}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="fff95fd5-b858-4528-be42-f5eb49eccd9b">
+						<jr:columnHeader style="table 4_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="8b3b0d30-5267-454f-98a3-14fdb43e3bc7"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Tekuci racun]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 4_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="87360959-66e0-4223-af10-364f1f2a8e2d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{TEKUCI_RACUN_PARTNERA}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="c069c66b-d13d-4a22-a250-a93621e82f8f">
+						<jr:columnHeader style="table 4_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="b7d58279-ef41-4ff8-afc9-08b562339ff3"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Telefon]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 4_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="d164d8da-e64c-4fc6-9cb5-6c51238ae54e"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{BROJ_TELEFONA_PARTNERA}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="08aaa49a-cfc8-439b-b1c9-050b1301da3d">
+						<jr:columnHeader style="table 4_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="63ba6368-ae7b-406a-ae7e-b6464d91b560"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Email]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 4_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="432c7f48-1244-4798-a3fc-54dc34ee773c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{EMAIL_ADRESA_PARTNERA}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="84" splitType="Stretch">
+			<staticText>
+				<reportElement x="667" y="17" width="133" height="46" uuid="ad86da87-9d1f-4335-9b3e-24f1fcb542f4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="32" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Faktura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="17" width="100" height="20" uuid="70daef44-e002-469b-b2c4-94c0cf3cd2dc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Id fakture:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="22" y="37" width="100" height="20" uuid="3f4b089a-6207-407a-b961-d7383e692ace"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ID_FAKTURE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="141" y="17" width="100" height="20" uuid="eb9413af-5871-4f29-a875-2c3ad4df6e1e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Broj fakture:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="141" y="37" width="100" height="20" uuid="378b0493-0eb0-46d9-9abe-f62d07ac07a9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{BROJ_FAKTURE}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="1360" y="37" width="100" height="20" uuid="9cbff7ae-4b36-4649-8dc2-6ba4d5eefe5e"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="190" y="0" width="100" height="20" uuid="3f8e8b8f-21d2-4aba-958c-bd4e26b439c7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Id stavke]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="0" width="100" height="20" uuid="83f1c28d-4a05-410a-9872-eb68a63f4412"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Id proizvoda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="0" width="100" height="20" uuid="9f0d64e8-c8d3-4e54-a955-31888635e8d8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Naziv proizvoda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="790" y="0" width="100" height="20" uuid="f126a4cd-b83c-45b0-8ab1-8ecb25767502"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cena bez pdv-a]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1190" y="0" width="143" height="20" uuid="857422a4-abb8-4d87-81f5-a5d1c3563ad7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ukupan iznos sa pdv-om]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="590" y="0" width="100" height="20" uuid="4d512bec-6fd7-47f8-981f-75e52a5d2765"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kolicina]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="890" y="0" width="100" height="20" uuid="32531e0c-ba4c-4449-bca9-4d20fa9e9f59"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rabat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="990" y="0" width="100" height="20" uuid="c3a88220-d5e1-43bf-bb38-1225c387ce39"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Stopa pdv-a]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="690" y="0" width="100" height="20" uuid="df36fe67-80b6-4f64-9f9e-b95e8fcafe21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Osnovica]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1090" y="0" width="100" height="20" uuid="f3991c58-9669-406b-9671-99cb274d8c64"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Iznos pdv-a]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="490" y="0" width="100" height="20" uuid="a6f209ac-bc5a-400d-acc4-946e25bb50de"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jed. mere]]></text>
+			</staticText>
+			<line>
+				<reportElement x="190" y="30" width="1102" height="1" uuid="f60a0654-af3d-44aa-a340-bedfe52138df"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="190" y="0" width="100" height="20" uuid="b3c12ec4-f707-4bdb-9c3b-1134734e9015"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ID_STAVKE_FAKTURE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="0" width="100" height="20" uuid="5079f23d-7cd5-4243-a62f-9397d2019fbd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ID_PROIZVODA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="0" width="100" height="20" uuid="6ea04692-a16d-43fe-8aad-5208a0b56aad"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NAZIV_PROIZVODA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="490" y="0" width="100" height="20" uuid="d6ad1de6-6c40-4939-b614-21661149a3b4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{SKRACENICA_JEDINICE_MERE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="590" y="0" width="100" height="20" uuid="c349d6af-27bc-4ce0-8724-7768972a9863"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{KOLICINA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="690" y="0" width="100" height="20" uuid="74a8abce-3f21-43d7-b854-5da0fcb98717"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{OSNOVICA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="790" y="0" width="100" height="20" uuid="cefca585-4c69-4f78-8364-bad15674eee3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{CENA_BEZ_PDV_A}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="890" y="0" width="100" height="20" uuid="7025ea6d-e1d2-491a-87b6-ee19e359df46"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{RABAT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="990" y="0" width="100" height="20" uuid="109e7b6f-2065-4bd9-8f02-e35fd52f1a09"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{STOPA_PDV_A}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1090" y="0" width="100" height="20" uuid="cd32a273-5664-4685-b3d8-d5879e7f0b0a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{IZNOS_PDV_A}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1190" y="0" width="100" height="20" uuid="4cdebd84-4019-4b00-adc7-392f2824dfd8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{UKUPAN_IZNOS_SA_PDV_OM}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="1360" y="34" width="100" height="20" uuid="c0410745-a798-4f6c-a174-2d7fa9b86171"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Faktura datum="1986-03-05+01:00" id_fakture="12" id_partnera="6" naziv_partnera="LLRXOJ3RZN3MJRPQHNDKB0ZTITIW6SD5VYW6KC6J9I048YIUIR0RYAPKLXEV16L69YRLVI54GTBTZVLKANDFSM7L8BKMXBI2WTUA7XZZLVB4ZVLPBUKES" id_preduzeca="29" id_godine="6" godina="6634" vrsta_fakture="I" broj_fakture="-1928564509" datum_valute="1974-02-11+01:00" ukupan_rabat="329.24426" ukupan_iznos_bez_pdv="1890.6731" ukupan_pdv="1452.102" ukupno_za_placanje="1616.0054">
+    <stavka id_proizvoda="12" jedinica_mere="580" naziv_proizvoda="0G4KCAQ1HOTYMEYC1T5CC6KPVCQ0" id_stavke_fakture="5" id_fakture="12" cena_bez_pdva="1548.9312" skracenica_jedinice_mere="" ukupan_iznos_sa_pdvom="1354.8741" kolicina="1.28922789E17" rabat="63.78854" stopa_pdva="0.48" osnovica="1869.7314" iznos_pdva="772.703" stavka_fakture="689690997"/>
+</Faktura>

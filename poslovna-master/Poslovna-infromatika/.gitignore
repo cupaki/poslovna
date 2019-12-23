@@ -1,0 +1,4 @@
+/target/
+
+/src/main/resources/node_modules
+/src/main/resources/public/lib

@@ -1,0 +1,123 @@
+<div class="panel">
+    <div class="panel-heading">
+        <h4>{{capitalize(tableName)}}</h4>
+    </div>
+    <div class="panel-heading" ng-controller="commandsContoller">
+        <md-button aria-label="Comment" ng-click="search()">
+            <img src="/img/search.gif">
+        </md-button>
+        <md-button aria-label="Comment" ng-click="refresh()">
+            <img src="/img/refresh.gif">
+        </md-button>
+        <md-button aria-label="Comment" ng-click="pickUp()">
+            <img src="/img/zoom-pickup.gif">
+        </md-button>
+        <md-button aria-label="Comment">
+            <img src="/img/help.gif">
+        </md-button>
+        <md-button aria-label="Comment" ng-click="goFirst()">
+            <img src="/img/first.gif">
+        </md-button>
+        <md-button aria-label="Comment" ng-click="goPrevious()">
+            <img src="/img/prev.gif">
+        </md-button>
+        <md-button aria-label="Comment" ng-click="goNext()">
+            <img src="/img/next.gif">
+        </md-button>
+        <md-button aria-label="Comment" ng-click="goLast()">
+            <img src="/img/last.gif">
+        </md-button>
+
+        <md-button ng-controller="DialogCommandsController" aria-label="Comment" ng-click="add()">
+            <img src="/img/add.gif">
+        </md-button>
+
+        <md-button aria-label="Comment" ng-click="deleteEntity()">
+            <img src="/img/remove.gif">
+        </md-button>
+
+
+        <div class="btn-group dropdown" uib-dropdown="" is-open="status.isopen" style="">
+            <md-button aria-label="Comment" id="single-button" type="button" class="btn btn-default dropdown-toggle" uib-dropdown-toggle="" ng-disabled="disabled" aria-haspopup="true" aria-expanded="false">
+                <img src="/img/nextform.gif">
+                <span class="caret"></span>
+            </md-button>
+            <ul class="dropdown-menu" uib-dropdown-menu="" role="menu" aria-labelledby="single-button">
+                <li role="menuitem" ng-repeat="table in linkedList" ng-click="open(table)">{{table}}</a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+<div class="panel-body">
+
+    <div class="responsive-table">
+
+        <div id="dialogGrid" class="ag-fresh" style="height: 400px;"></div>
+    </div>
+
+    <div class="panel form-element-padding">
+
+        <div class="panel-body" style="padding-bottom:30px;">
+
+            <div class="col-md-8">
+
+                <div class="row" ng-repeat="column in insertingValue">
+
+                    <div ng-if="column.columnType != 'datetime'">
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label text-right" style="margin-top: 10px">{{capitalize(column.columnName)}}</label>
+                                <div class="col-sm-6" ng-if="!column.primaryKey && !column.forgienKey">
+                                    <input type="text" ng-model=selectedRowData[$index].columnValue ng-init="" class="form-control" placeholder="{{column.columnName}}" style="margin-top: 10px">
+
+                                </div>
+                                <div class="col-sm-6" ng-if="column.primaryKey">
+                                    <input type="text" ng-model=selectedRowData[$index].columnValue ng-init="" class="form-control" placeholder="{{column.columnName}}" style="margin-top: 10px" disabled="">
+
+                                </div>
+                                <div class="col-sm-6" ng-if="column.forgienKey">
+                                    <input type="text" ng-model=selectedRowData[$index].columnValue ng-init="" class="form-control" placeholder="{{column.columnName}}" style="margin-top: 10px" disabled="">
+                                </div>
+
+                                <input ng-if="column.forgienKey" type="button" ng-click="open(column.fkTable)" class=" btn btn-outline btn-default" value="...">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group" ng-if="column.columnType == 'datetime'">
+                            <label class="col-sm-4 control-label text-right" style="margin-top: 10px">{{capitalize(column.columnName)}}</label>
+                            <div >
+                                <md-datepicker class="col-sm-6" ng-model=selectedRowData[$index].columnValue md-placeholder="{{column.columnName}}" style="margin-top: 10px"></md-datepicker>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-2" align="right"></br>
+
+            <div class="form-group">
+                <md-button class="md-raised" ng-click="commit()">Commit</md-button>
+            </div>
+        </br>
+        <div class="form-group" ng-controller="commandsContoller">
+            <md-button class="md-raised md-warn" ng-click="rollback()">Poništi</md-button>
+        </div>
+
+        <div class="col-md-6" style="padding-top:20px;" ng-controller="commandsContoller">
+            <span>{{stateCurrent}}</span>
+        </div>
+    </div>
+
+</div>
+</div>
+</div>
+
+<script type="text/javascript"></script>
+</div>
